@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    position: relative;
+    background: #1d1b31;
+    min-height: 100%;
+    height:100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+*::-webkit-scrollbar-track {
+    background: #1d1b31;
+  }
+*::-webkit-scrollbar-thumb {
+    background-color: #838383;
+    border-radius: 20px;
+    border: 3px solid rgb(92, 86, 75);
+  }
+*::-webkit-scrollbar {
+    width: 12px;
+  }
+
+.sidebar {
+    top: 0;
+    left: 0;
+    padding: 6px 14px;
+    position: fixed;
+    background: #11101d;
+    min-height: 100%;
+    width: 80px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active {
+    width: 240px;
+}
+
+.sidebar .logo_content .logo {
+    color: white;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    padding-left: 65px;
+    padding-top: 35px;
+}
+
+.sidebar.active .logo_content .logo {
+    opacity: 1;
+}
+
+.sidebar .logo_content .logo ion-icon {
+    position: absolute;
+    margin-left: 73px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.sidebar.active .logo_content .logo ion-icon {
+    visibility: visible;
+    opacity: 1;
+}
+
+.sidebar .logo_content .logo .logo_name {
+    font-size: 35px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.sidebar.active .logo_content .logo .logo_name {
+    visibility: visible;
+    opacity: 1;
+}
+
+.sidebar .logo_content #SBTN {
+    position: absolute;
+    border-radius: 12px;
+    color: white;
+    margin-left: 10%;
+    top: 10px;
+    font-size: 90px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.sidebar .logo_content #SBTN:hover {
+    background: white;
+    color: black;
+}
+
+.sidebar.active .logo_content #SBTN:hover {
+    background: white;
+    color: black;
+}
+
+.sidebar.active .logo_content #SBTN {
+    position: absolute;
+    border-radius: 12px;
+    color: white;
+    margin-left: 76%;
+    top: 1px;
+    font-size: 25px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+}
+
+.sidebar ul li {
+    list-style: none;
+    position: relative;
+    display: grid;
+    top: 40px;
+    height: 50px;
+    width: 100%;
+}
+
+.sidebar ul li a {
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 12px;
+    white-space: nowrap;
+    width: 55px;
+}
+
+.sidebar ul li a:hover {
+    background: white;
+    color: #11101d
+}
+
+.sidebar.active ul li a {
+    width: 100%;
+}
+
+.sidebar ul li a ion-icon {
+    height: 35px;
+    min-width: 35px;
+    border-radius: 12px;
+    line-height: 28px;
+    margin-right: 22px;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.sidebar ul li input {
+    position: absolute;
+    background: #1d1b31;
+    height: 81%;
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    transition: opacity 0.5s, visibility 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sidebar.active ul li input {
+    position: absolute;
+    background: #1d1b31;
+    height: 81%;
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    transition: opacity 0.5s, visibility 0.5s;
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar ul li .search-outline {
+    position: absolute;
+    z-index: 99;
+    font-size: 35px;
+    color: white;
+    margin-left: 1px;
+    margin-top: 6px;
+    width: 100%;
+    height: 85%;
+    border-radius: 12px;
+}
+
+
+.sidebar.active ul li .search-outline {
+    display: none;
+}
+
+.sidebar.active ul li .search-outline:hover {
+    background: transparent;
+    color: white;
+}
+
+.sidebar ul li .search-outline:hover {
+    background: white;
+    color: black;
+}
+
+.sidebar .links_name {
+    transition: opacity 0.5s, opacity 0.5s, visibility 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sidebar.active .links_name {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    height: 35px;
+    left: 60%;
+    width: 122px;
+    background: yellow;
+    margin-left: 40%;
+    top: 20%;
+    transform: translateY(-100%);
+    box-shadow: 0 5px 10px rgba(248, 76, 76, 0.2);
+    border-radius: 6px;
+    line-height: 35px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+.sidebar ul li:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+
+.sidebar.active+.content {
+    padding-left: 180px;
+    padding-right: 15px;
+}
+.content {
+    padding-left: 15px;
+    padding-right: 15px;
+    background: #1d1b31;
+    margin-left: 80px;
+    padding-top: 10px;
+    width: 94%;
+    color: black;
+    display: grid;
+    transition: all 0.5s ease;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(240px, 0.1fr));
+}
+.content .card {
+    background: #2b2a3a;
+    list-style: none;
+    border-radius: 15px;
+    margin: 15px;
+    height: 220px;
+    width: 150px;
+    text-align: center;
+}
+.content .card li .image {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 100%;
+    height: 150px;
+}
+
+.content .card li {
+    color: grey;
+    text-decoration: none;
+}
+.content .card a {
+    color: grey;
+    text-decoration: none;
+}
+.content .card li a .title {
+    font-size: 20px;
+    padding-top: 20px;
+    margin-top: -10px;
+    color: rgb(223, 223, 223);
+}
+.content .card li a .title:hover {
+    font-size: 20px;
+    padding-top: 20px;
+    margin-top: -10px;
+    color: #4dda6c;
+}
+.content .card li .time {
+    font-size: 15px;
+    margin-top: -30px;
+    padding: 15px;
+}
+.content .card li .playicon {
+    position: absolute;
+    font-size: 80px;
+    margin-left: 40px;
+    margin-top: 40px;
+    color: white;
+    transition: opacity 0.5s, visibility 0.5s; 
+    visibility: hidden;
+    opacity: 0;
+}
+.content .card:hover li  a .playicon {
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+}
+.content .card li a .playicon:hover {
+    transition: all 0.2s linear;
+    color: #4dda6c;
+}

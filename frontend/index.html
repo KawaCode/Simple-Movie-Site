@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <ion-icon name="videocam-outline"></ion-icon>
+                <div class="logo_name">M4K</div>
+            </div>
+            <ion-icon name="menu-outline" id="SBTN"></ion-icon>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <ion-icon id="search-outline" name="search-outline" class="search-outline"></ion-icon>
+                <input type="text" id="searcher" placeholder="Search...">
+                <span class="tooltip">Search</span>
+            </li>
+            <li>
+                <a href="#">
+                    <ion-icon name="home-outline"></ion-icon>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <ion-icon name="film-outline"></ion-icon>
+                    <span class="links_name">Movies</span>
+                </a>
+                <span class="tooltip">Movies</span>
+            </li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+    </div>
+    <script src="../frontend/search.js"></script>
+    <script>
+        let SBTN = document.getElementById("SBTN")
+        let search = document.getElementById("search-outline")
+        let sidebar = document.getElementById("sidebar")
+        SBTN.onclick = function () {
+            sidebar.classList.toggle("active")
+        }
+        search.onclick = function () {
+            sidebar.classList.toggle('active')
+        }
+    </script>
+</body>
+
+</html>
