@@ -2,6 +2,9 @@
 
 This code is under MIT License and DOES NOT promote or encourage any illegal activities! The content in this document is provided solely for educational purposes and to create awareness!
 
+Used Sources:
+http://hp-api.herokuapp.com/api/characters
+
 Usage:
 ```
 To run this project follow the following steps:
